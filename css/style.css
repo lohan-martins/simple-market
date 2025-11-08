@@ -85,8 +85,14 @@ span {
 }
 
 .items {
-  padding: 0 0.6rem;
-  height: 100%;
+  padding: 0.6rem;
+  height: 30rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-color: var(--color-secondary) #00000000;
+}
+.items::-webkit-scrollbar-button {
+  display: none;
 }
 .items .item {
   display: flex;
