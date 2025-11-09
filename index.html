@@ -36,6 +36,7 @@
           <section class="container-products">
             <header class="products-header">
               <h2 class="products-title">Produtos</h2>
+              `
             </header>
 
             <section class="products js-products"></section>
@@ -49,6 +50,50 @@
           </form>
         </div>
       </section>
+
+      <div class="receipt-container">
+        <section class="receipt">
+          <header class="receipt-header">
+            <h2 class="receipt-title">Recibo de compras</h2>
+            <section class="receipt-info-container">
+              <div class="receipt-info">
+                <span class="customer-name-label">Nome:</span>
+                <span class="customer-name">Caiu</span>
+              </div>
+              <div class="receipt-info">
+                <span class="data-label">Data:</span>
+                <span class="data"><time value="">08/11/2025</time></span>
+              </div>
+            </section>
+          </header>
+
+          <section>
+            <table class="products-table">
+              <caption class="table-title">
+                Produtos comprados
+              </caption>
+              <tbody>
+                <tr class="table-line">
+                  <td class="product-quantity">2x</td>
+                  <td class="product-name">Maçã</td>
+                  <td class="product-price">R$ 2,00</td>
+                </tr>
+
+                <tr class="table-line">
+                  <td class="product-quantity">2x</td>
+                  <td class="product-name">Maçã</td>
+                  <td class="product-price">R$ 2,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <footer class="receipt-footer">
+            <span class="receipt-total-label">Total:</span>
+            <span class="receipt-total">R$ 6,00</span>
+          </footer>
+        </section>
+      </div>
 
       <script src="./js/script.js"></script>
     </main>
