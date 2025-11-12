@@ -6,6 +6,8 @@
   --color-secondary: #ffc18a;
   --color-tertiary: #f18c56;
 
+  --text-light-color: #fff;
+
   --font-size-primary: 16px;
   --font-size-secondary: 22px;
   --font-size-tertiary: 30px;
@@ -58,6 +60,7 @@ span {
 
 .market {
   display: flex;
+  position: relative;
   height: 100%;
   overflow: hidden;
 }
@@ -118,7 +121,7 @@ span {
   background-color: var(--color-tertiary);
 }
 .btn-remove-item:hover::after {
-  background-color: #fff;
+  background-color: var(--text-light-color);
 }
 .btn-remove-item::after {
   display: inline-block;
@@ -256,9 +259,62 @@ span {
   border: none;
   background-color: var(--color-secondary);
   width: 9rem;
-  color: #fff;
+  color: var(--text-light-color);
 }
 .btn-buy:hover {
   transform: scale(1.05);
   background-color: var(--color-primary);
+}
+
+.receipt-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+}
+
+.receipt {
+  border-radius: var(--border-radius-secondary);
+  background-color: var(--bg-color-primary);
+  width: 22rem;
+  overflow: hidden;
+}
+
+.receipt-title {
+  padding: 0.8rem 0;
+}
+
+.receipt-title,
+.receipt-products-title {
+  text-align: center;
+}
+
+.receipt-title,
+.receipt-products-title,
+.receipt-footer {
+  background-color: var(--color-primary);
+  color: var(--text-light-color);
+  font-size: var(--font-size-secondary);
+}
+
+.receipt-info-container,
+.receipt-products,
+.receipt-footer {
+  padding: 0.4rem 0.8rem;
+}
+
+.receipt-info,
+.receipt-product,
+.receipt-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.receipt-products-title {
+  padding: 0.4rem 0;
 }
