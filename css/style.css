@@ -221,7 +221,7 @@ span {
   transform: scale(1.15);
 }
 
-.container-buy {
+.buy-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -239,23 +239,22 @@ span {
   white-space: nowrap;
 }
 
-.input-buy,
+.customer-name-input,
 .btn-buy {
   margin: 0 0.5rem;
   border-radius: var(--border-radius-secondary);
-  padding: 0 2rem;
   height: 2.5rem;
   font-size: var(--font-size-primary);
   font-family: var(--font-primary);
   text-align: center;
 }
-.input-buy {
+.customer-name-input {
   outline: none;
   border: 1px solid #00000019;
   width: 13rem;
   color: var(--color-secondary);
 }
-.input-buy::placeholder {
+.customer-name-input::placeholder {
   color: #00000032;
 }
 
@@ -273,7 +272,7 @@ span {
 }
 
 .receipt-container {
-  display: flex;
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -312,6 +311,13 @@ span {
 .receipt-products,
 .receipt-footer {
   padding: 0.4rem 0.8rem;
+}
+
+.receipt-products {
+  height: 20rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-color: var(--color-secondary) #00000000;
 }
 
 .receipt-info,

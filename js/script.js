@@ -1,6 +1,4 @@
-const INCREASE = "increase";
-const DECREASE = "decrease";
-
+/* -- Mercado -- */
 const containerProducts = document.querySelector(".js-products");
 const containerShoppingCart = document.querySelector(".js-items");
 const totalValueElem = document.querySelector(".js-value");
@@ -27,10 +25,6 @@ const marketProducts = {
   water: { name: "Água", price: 2.0, src: "./images/water.png" },
   wine: { name: "Vinho", price: 40.0, src: "./images/wine.png" },
 };
-
-const shoppingCart = new Map();
-
-let totalValue = 0;
 
 function attachShoppingCartEvent(productElem, price) {
   const { productName } = productElem.dataset;
@@ -74,6 +68,14 @@ function renderAllProducts(container, products) {
 }
 
 renderAllProducts(containerProducts, marketProducts);
+
+/* -- Carrinho de compras -- */
+const INCREASE = "increase";
+const DECREASE = "decrease";
+
+const shoppingCart = new Map();
+
+let totalValue = 0;
 
 function addItemToShoppingCart(productName, price) {
   let item;
@@ -200,5 +202,101 @@ function formatCurrency(value) {
   });
 }
 
+/* -- Formulário de compra -- */
+const buyContainerElem = document.querySelector(".js-buy-container");
+const customerNameInputElem = document.querySelector(".js-customer-name-input");
 
+buyContainerElem.addEventListener("submit", handleBuyFormSubmit);
 
+customerNameInputElem.addEventListener("invalid", handleInvalidCustomerName);
+customerNameInputElem.addEventListener("input", clearCustomerNameError);
+
+function handleInvalidCustomerName() {
+  customerNameInputElem.setCustomValidity("Digite apenas letras, sem números ou símbolos.");
+}
+function clearCustomerNameError() {
+  customerNameInputElem.setCustomValidity("");
+}
+
+/* -- Recibo da compra -- */
+const receiptContainerElem = document.querySelector(".js-receipt-container");
+const customerNameDisplayElem = document.querySelector(".js-customer-name");
+const dateElem = document.querySelector(".js-date");
+const receiptProductsElem = document.querySelector(".js-receipt-products");
+
+function handleBuyFormSubmit(event) {
+  event.preventDefault();
+  processBuy();
+}
+
+function processBuy() {
+  if (shoppingCart.size === 0) {
+    alert("Carrinho está vazio");
+    return;
+  }
+
+  displayCustomerName();
+  displayDate();
+  renderReceiptProductList(shoppingCart);
+  renderReceiptTotal(shoppingCart);
+
+  receiptContainerElem.style.display = "flex";
+}
+
+function displayCustomerName() {
+  const name = customerNameInputElem.value.trim();
+  customerNameDisplayElem.textContent = name;
+}
+
+function displayDate() {
+  const now = new Date();
+
+  dateElem.textContent = now.toLocaleDateString("pt-BR");
+  dateElem.setAttribute("datetime", now.toISOString());
+}
+
+function renderReceiptProductList(cart) {
+  const fragment = document.createDocumentFragment();
+
+  cart.forEach((value, key) => {
+    const productElem = createReceiptProduct(key, value);
+    fragment.appendChild(productElem);
+  });
+
+  receiptProductsElem.appendChild(fragment);
+}
+
+function createReceiptProduct(name, { quantity, price }) {
+  const container = document.createElement("div");
+  container.classList.add("receipt-product");
+
+  const formattedPrice = formatCurrency(price);
+
+  const quantityElem = document.createElement("span");
+  quantityElem.textContent = quantity;
+
+  const nameElem = document.createElement("span");
+  nameElem.textContent = name;
+
+  const priceElem = document.createElement("span");
+  priceElem.textContent = formattedPrice;
+
+  container.appendChild(quantityElem);
+  container.appendChild(nameElem);
+  container.appendChild(priceElem);
+
+  return container;
+}
+
+function renderReceiptTotal(cart) {
+  const receiptTotal = document.querySelector(".js-receipt-total");
+
+  let total = 0;
+
+  cart.forEach(({ quantity, price }) => {
+    total += quantity * price;
+  });
+
+  const formattedTotal = formatCurrency(total);
+  receiptTotal.textContent = formattedTotal;
+}

@@ -41,15 +41,23 @@
             <section class="products js-products"></section>
           </section>
 
-          <form class="container-buy">
+          <form class="buy-container js-buy-container">
             <label class="visually-hidden" for="buyer-name">Nome</label>
-            <input id="buyer-name" class="input-buy" type="text" placeholder="Digite seu nome" />
+            <input
+              id="buyer-name"
+              class="customer-name-input js-customer-name-input"
+              type="text"
+              maxlength="40"
+              pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
+              placeholder="Digite seu nome"
+              required
+            />
 
-            <button class="btn-buy">Comprar</button>
+            <button class="btn-buy js-btn-buy">Comprar</button>
           </form>
         </div>
 
-        <div class="receipt-container">
+        <div class="receipt-container js-receipt-container">
           <section class="receipt">
             <header>
               <h2 class="receipt-title">Recibo de compras</h2>
@@ -60,19 +68,19 @@
                 </div>
                 <div class="receipt-info">
                   <span>Data:</span>
-                  <span class="js-date"><time value=""></time></span>
+                  <span><time class="js-date"></time></span>
                 </div>
               </section>
             </header>
 
             <section>
               <h3 class="receipt-products-title">Produtos comprados</h3>
-              <section class="receipt-products"></section>
+              <section class="receipt-products js-receipt-products"></section>
             </section>
 
             <footer class="receipt-footer">
               <span>Total:</span>
-              <span class="js-receipt-total">R$ 6,00</span>
+              <span class="js-receipt-total"></span>
             </footer>
           </section>
         </div>
