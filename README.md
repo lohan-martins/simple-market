@@ -1,4 +1,78 @@
-## Créditos
+# Simple-Market
+
+Este projeto foi desenvolvido com base em um desafio proposto pela Incantare Studios, com o objetivo de aprimorar habilidades de programação Front-End.
+Ele consiste em um mercado de compras simples, onde o usuário pode visualizar os produtos disponíveis, selecioná-los e finalizar a compra. Ao concluir o processo, é exibido um recibo detalhado com os itens adquiridos.
+
+<br>
+
+## 🔗 Demonstração
+> 🚀 **Acesse o site:**  
+> https://lohan-martins.github.io/URL/
+
+<br>
+
+## 🧪 Tecnologias
+
+O projeto utiliza as seguintes tecnologias:
+
+- **HTML:** Estrutura da página.
+
+- **CSS:** Estilização da página.
+
+- **JavaScript:** Interatividade da página.
+
+<br>
+
+## 🛠️ Ferramentas
+O projeto foi desenvolvido utilizando as seguintes ferramentas:
+
+- **Figma:** Criação do mockup e protótipo da página.
+- **VS Code:** Ambiente de desenvolvimento do código.
+- **Git:** Controle de versionamento.
+- **GitHub:** Hospedagem e gerenciamento do repositório.
+
+<br>
+
+## 🎨 Design
+Abaixo está o mockup da página desenvolvido no Figma.
+
+<img src="./images/readme/simple-market-mockup.png" width="600px">
+
+<br>
+
+## 📦 Instalação e execução
+No diretório onde o projeto deve ficar, clone o repositório do projeto.
+```
+# Clone o repositório
+git clone <url-do-repositorio>
+```
+Depois, abra o arquivo `index.html` no navegador para visualizar o projeto.
+
+<br>
+
+## 📁 Estrutura do projeto
+```
+simple-market/
+  ├── css/
+  │    └── style.css
+  ├── images/
+  │    └── market-products/
+  │    └── readme/
+  ├── js/
+  │    └── script.js
+  ├── index.html
+  └── README.md
+
+```
+> A estrutura acima mostra apenas os diretórios principais. Alguns arquivos foram omitidos para manter o README conciso.
+
+<br>
+
+## 📄 Créditos
+
+### Fontes
+#### Google fonts:
+- **Poppins:** https://fonts.google.com/specimen/Poppins
 
 ### Imagens:
 
