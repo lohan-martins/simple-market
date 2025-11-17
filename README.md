@@ -44,7 +44,7 @@ Abaixo está o mockup da página desenvolvido no Figma.
 No diretório onde o projeto deve ficar, clone o repositório do projeto.
 ```
 # Clone o repositório
-git clone <url-do-repositorio>
+git clone https://github.com/lohan-martins/simple-market.git
 ```
 Depois, abra o arquivo `index.html` no navegador para visualizar o projeto.
 
