@@ -7,7 +7,7 @@ Ele consiste em um mercado de compras simples, onde o usuário pode visualizar o
 
 ## 🔗 Demonstração
 > 🚀 **Acesse o site:**  
-> https://lohan-martins.github.io/URL/
+> https://lohan-martins.github.io/simple-market/
 
 <br>
 
